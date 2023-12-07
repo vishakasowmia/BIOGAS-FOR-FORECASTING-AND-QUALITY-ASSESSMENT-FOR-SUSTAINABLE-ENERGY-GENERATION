@@ -17,7 +17,9 @@ The challenge is to develop a reliable predictive model for biogas production th
 
 * Dashboard : Visualize the data.
 
-
+## Screenshot of waste management webpage
+* Electricity Predicition
+![image](https://github.com/vishakasowmia/BIOGAS-FOR-FORECASTING-AND-QUALITY-ASSESSMENT-FOR-SUSTAINABLE-ENERGY-GENERATION/assets/118277287/3a835f35-32ec-41b8-b24b-6fd8fe74c61b)
   
 
 
