@@ -18,6 +18,12 @@ The challenge is to develop a reliable predictive model for biogas production th
 * Dashboard : Visualize the data.
 
 
+  
+
+
+
+
+
 
 
 
