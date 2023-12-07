@@ -1,0 +1,30 @@
+{% extends 'base/main.html' %}
+{% block content %}
+<div class="header-bar" style="display: flex; justify-content: space-between; align-items: center;">
+    <a href="{% url 'home' %}" class="home-link" style="margin-right: auto;">Home</a>
+    <h1 class="dashboard-title">Dashboard</h1>
+    <a href="{% url 'logout' %}" style="margin-left: auto;">Logout</a>
+</div>
+
+    
+    <style>
+        .header-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    
+        .dashboard-title {
+            margin: 20px; /* Remove default margin to ensure alignment */
+        }
+    </style>
+    
+    <div class="dashboard-title">
+        <h2>Upload the CSV File</h2>
+        <form method="post" enctype="multipart/form-data" action="{% url 'dashboard' %}">
+            {% csrf_token %}
+            {{ form }}
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+{% endblock content %}

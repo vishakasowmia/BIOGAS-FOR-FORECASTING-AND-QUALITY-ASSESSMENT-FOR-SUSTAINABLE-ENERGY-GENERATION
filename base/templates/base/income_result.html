@@ -1,0 +1,17 @@
+{% extends 'base/main.html' %}
+
+{% block content %}
+    <div class="header-bar">
+        <h1>Income Prediction Result</h1>
+    </div>
+    <div class="card-body">
+        <h2>Estimated Monthly Income</h2>
+        {% if prediction %}
+            <p>The estimated income for the given month and year is: Rs {{ prediction }}</p>
+        {% else %}
+            <p>No prediction available.</p>
+        {% endif %}
+         <!-- Add a button or link to go back to the ARIMA prediction page -->
+         <a href="{% url 'monthly_income_prediction' %}" style="display: block; margin: 0 auto; font-weight: bold;">Go back to Monthly income predicition</a>
+    </div>
+{% endblock content %}

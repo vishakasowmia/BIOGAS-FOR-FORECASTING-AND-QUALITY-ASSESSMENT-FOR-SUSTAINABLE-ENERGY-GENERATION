@@ -1,0 +1,48 @@
+{% extends 'base/main.html' %}
+{% block content %}
+<div class="header-bar" style="display: flex; align-items: center; justify-content: space-between;">
+    <div>
+        <!-- Include this link/button where you want the user to log out -->
+        <a href="{% url 'logout' %}">Logout</a>
+        
+
+    </div>
+    <h1 style="display: inline;">Home</h1>
+    <div style="display: flex; margin-right: 0px;">
+        <a href="{% url 'prediction' %}" style="margin-right: 20px;">Prediction</a>
+        <a href="{% url 'dashboard' %}">Dashboard</a>
+    </div>
+</div>
+
+    <div class="full-content">
+        <div style="text-align: justify;">
+        <h2>Biogas Generation Information</h2>
+        <p>Electricity generation from biogas stands at the forefront of renewable energy solutions, harnessing the power of organic waste to produce sustainable electricity. This innovative process involves the breakdown of organic materials, such as agricultural remnants, animal waste, and food scraps, through anaerobic digestion, culminating in the creation of biogas a blend of methane and carbon dioxide. By utilizing this biogas as a fuel source, generators convert its energy into electricity, presenting a dual benefit: generating power while mitigating greenhouse gas emissions. This environmentally conscious approach not only addresses waste management but also contributes to a circular economy, offering a promising solution in the realm of renewable energy.</p>
+    </div>
+
+        <p><b>The Importance of Electricty Generated From Biogas are:</b></p>
+        <h3><strong>Sustainability:</strong></h3>
+        <div style="text-align: justify;">
+        <p>It offers a sustainable energy solution by repurposing organic waste, reducing reliance on non-renewable energy sources, and promoting a circular economy that minimizes waste.</p>
+    </div>
+ 
+    <div style="text-align: justify;">
+        <h3><strong>Renewable Energy:</strong></h3>
+        <p>As a renewable energy source, biogas electricity generation reduces greenhouse gas emissions by capturing methane, a potent greenhouse gas, and converting it into a usable energy form.</p>
+    </div>
+        
+
+        <h3><strong>Environmental Impact:</strong></h3>
+        <div style="text-align: justify;">
+        <p>It mitigates environmental pollution by managing organic waste effectively, reducing landfill usage, and curbing the release of methane, thereby contributing to efforts combating climate change.</p>
+    </div>
+        <h3><strong>Energy Access:</strong></h3>
+        <div style="text-align: justify;">
+        <p>It provides an opportunity for decentralized electricity generation, particularly in rural areas or regions lacking reliable access to centralized power grids, enhancing energy access and supporting economic development.</p>
+    </div>
+
+        <h3><strong>Agricultural Benefits:</strong></h3>
+        <div style="text-align: justify;">
+        <p>Biogas systems can aid in managing agricultural waste and livestock manure, offering a sustainable waste management solution for farms while providing additional revenue streams.</p>
+    </div>
+{% endblock content %}

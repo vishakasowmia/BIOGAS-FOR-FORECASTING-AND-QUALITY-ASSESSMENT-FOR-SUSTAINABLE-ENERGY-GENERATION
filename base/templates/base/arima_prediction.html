@@ -1,0 +1,33 @@
+{% extends 'base/main.html' %}
+{% block content %}
+    <div class="header-bar" style="display: flex; flex-direction: column; align-items: center;">
+        <div style="margin-top: 10px;">
+            <div style="display: inline-block; white-space: nowrap; margin-left: 450px;">
+                <a href="{% url 'prediction' %}">Prediction</a>
+            </div>
+        </div>
+        <h1>Plastic Generation Prediction</h1>
+    </div>
+
+    <style>
+        .header-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    
+        .dashboard-title {
+            margin: 10px; /* Remove default margin to ensure alignment */
+        }
+    </style>
+
+    <div class="card-body">
+        <form method="post">
+            {% csrf_token %}
+            <label for="weeks_to_predict">Predict for how many weeks:</label>
+            <input type="number" id="weeks_to_predict" name="weeks_to_predict" required min="1" max="8">
+            <br><br>
+            <input type="submit" value="Predict">
+        </form>
+    </div>
+{% endblock content %}

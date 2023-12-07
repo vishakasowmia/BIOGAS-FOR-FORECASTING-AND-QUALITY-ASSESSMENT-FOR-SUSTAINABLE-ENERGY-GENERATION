@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Predict Income</title>
+    <a href="{% url 'prediction' %}">Prediction</a>
+</head>
+<body>
+    <h2>Predict Average Income</h2>
+    <form method="post" action="{% url 'monthly_income_prediction' %}">
+        {% csrf_token %}
+        <label for="month">Month:</label>
+        <input type="number" name="month" required>
+        <br>
+        <label for="year">Year:</label>
+        <input type="number" name="year" required>
+        <br>
+        <input type="submit" value="Predict">
+    </form>
+</body>
+</html>

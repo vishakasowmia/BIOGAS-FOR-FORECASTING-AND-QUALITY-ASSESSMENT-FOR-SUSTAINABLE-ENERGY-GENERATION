@@ -1,0 +1,71 @@
+{% extends 'base/main.html' %}
+{% block content %}
+<div class="header-bar" style="display: flex; flex-direction: column; align-items: center;">
+    <h1 style="font-size: 24px;">Plastic Generation Prediction</h1>
+    <h2 style="font-size: 24px; margin-top: 0px;">Result</h2>
+</div>
+
+
+    <div class="card-body">
+        {% if future_predictions %}
+            <h3>Weekly Predictions:</h3>
+            <h4>Water Bottles</h4>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Week</th>
+                        <th>Predicted Kg Needed</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for week, water_prediction, _, _ in future_predictions %}
+                    <tr>
+                        <td>{{ week }}</td>
+                        <td>{{ water_prediction }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <br>
+            <h4>Aluminum</h4>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Week</th>
+                        <th>Predicted Kg Needed</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for week, _, aluminum_prediction, _ in future_predictions %}
+                    <tr>
+                        <td>{{ week }}</td>
+                        <td>{{ aluminum_prediction }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <br>
+            <h4>Milk Pouches</h4>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Week</th>
+                        <th>Predicted Kg Needed</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for week, _, _, milk_prediction in future_predictions %}
+                    <tr>
+                        <td>{{ week }}</td>
+                        <td>{{ milk_prediction }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% endif %}
+        <br><br>
+
+        <!-- Add a button or link to go back to the ARIMA prediction page -->
+        <a href="{% url 'arima_prediction' %}" style="display: block; margin: 0 auto; font-weight: bold;">Go back to Plastic Generation Prediction</a>
+    </div>
+{% endblock content %}

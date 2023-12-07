@@ -1,0 +1,25 @@
+{% extends 'base/main.html' %}
+
+{% block content %}
+    <div class="header-bar" style="display: flex; flex-direction: column; align-items: center;">
+        <div style="margin-top: 10px;">
+            <div style="display: inline-block; white-space: nowrap; margin-left: 450px;">
+                <a href="{% url 'prediction' %}">Prediction</a>
+            </div>
+        </div>
+        <h1>Monthly Income Prediction</h1>
+    </div>
+    <div class="card-body">
+        <h2>Predict Monthly Income</h2>
+        <form method="post" action="{% url 'monthly_income_prediction' %}">
+            {% csrf_token %}
+            <label for="month">Month (1-12):</label>
+            <input type="number" name="month" id="month" required min="1" max="12">
+            <br>
+            <label for="year">Year:</label>
+            <input type="number" name="year" id="year" required>
+            <br>
+            <input type="submit" value="Predict">
+        </form>
+    </div>
+{% endblock content %}

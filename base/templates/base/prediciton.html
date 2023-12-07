@@ -1,0 +1,73 @@
+{% extends 'base/main.html' %}
+{% block content %}
+<div class="header-bar" style="display: flex; flex-direction: column; align-items: center;">
+   
+    <div style="margin-top: 10px;">
+        <div style="display: inline-block; white-space: nowrap; margin-left: 450px;">
+            <a href="{% url 'home' %}" class="home-link">Home</a>
+        </div>
+
+        <div style="display: inline-block; white-space: nowrap; margin-left: 450px;">
+        <a href="{% url 'logout' %}">Logout</a>
+ </div>
+    </div>
+    <h1>Prediction</h1>
+    <div style="display: inline-block; white-space: nowrap; margin-right: 0px;">
+        <a href="{% url 'biogas_prediction' %}">Electricity Prediction</a> |
+        <a href="{% url 'arima_prediction' %}">Plastic Generation Prediction</a> |
+        <a href="{% url 'monthly_income_prediction' %}">Monthly Income Prediction</a>
+    </div>
+</div>
+
+
+<style>
+    .header-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .dashboard-title {
+        margin: 20px; /* Remove default margin to ensure alignment */
+    }
+</style>
+
+<div class="full-content">
+    <h2>Prediction</h2>
+
+    <p><b>1. Electricity Generation Prediction:</b><br>
+        <div style="text-align: justify;">
+        Objective: Predict the electricity output from biogas.<br>
+        <br>
+        Methodology: Utilize a regression model to ascertain if the provided wet waste and biogas yield sufficient electricity, with a threshold set at 40 watts.<br>
+        <br>
+        Outcome: If electricity falls below the threshold, employ the regression model to forecast the required amount of wet waste for optimal electricity generation.<br>
+        <br>
+    </div>
+
+        <b>2. Feedstock Forecasting:</b><br>
+        <div style="text-align: justify;">
+        <br>
+        Objective : Predict the feedstock requirements for the upcoming 8 weeks.<br>
+        <br>
+        Significance: Facilitate efficient feedstock management for storekeepers.<br>
+        <br>
+        Approach: Leverage predictive modeling to anticipate the quantity of feedstock needed in the subsequent 8-week period.<br>
+        <br>
+    </div>
+
+  
+        <b>3. Income Generation Prediction:</b><br>
+        <div style="text-align: justify;">
+        <br>
+        Objective: Forecast the income generated through waste sales.<br>
+        <br>
+        Rationale: Enable proactive planning based on anticipated revenue.<br>
+        <br>
+        Strategy: Employ predictive analytics to estimate income derived from the sale of waste products.<br>
+        <br>
+    </p>
+</div>
+</div>
+
+{% endblock content %}

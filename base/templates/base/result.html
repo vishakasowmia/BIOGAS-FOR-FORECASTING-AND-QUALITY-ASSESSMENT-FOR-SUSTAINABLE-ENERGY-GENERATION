@@ -1,0 +1,21 @@
+{% extends 'base/main.html' %}
+{% block content %}
+    <div class="header-bar">
+        <h1>Electricity Prediction Result</h1>
+    </div>
+    <div class="card-body">
+        {% if prediction_text %}
+            <h3>Prediction Result:</h3>
+            <p>{{ prediction_text }}</p>
+        {% endif %}
+
+        {% if extra_info %}
+            <h3>Additional Information:</h3>
+            <p>Additional Biogas Needed litters: {{ extra_info.additional_wet_waste_needed_liters }} liters</p>
+            <p>Predicted Wet Waste Needed Kg: {{ extra_info.wet_waste_prediction }} kg</p>
+        {% endif %}
+
+        <!-- Add a button or link to go back to the prediction page -->
+        <a href="{% url 'biogas_prediction' %}">Go back to Electricity prediction</a>
+    </div>
+{% endblock content %}
